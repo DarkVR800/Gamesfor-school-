@@ -224,14 +224,14 @@
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "622435399"));
+        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Terraria 1.0.3.sb3"));
       } catch (error) {
         console.error(error);
       }
 
       vm.setTurboMode(false);
-      if (vm.setInterpolation) vm.setInterpolation(true);
-      if (vm.setFramerate) vm.setFramerate(30);
+      if (vm.setInterpolation) vm.setInterpolation(false);
+      if (vm.setFramerate) vm.setFramerate(60);
       if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(true);
       if (vm.setRuntimeOptions) vm.setRuntimeOptions({
         fencing: true,
@@ -240,7 +240,7 @@
       });
       if (vm.setCompilerOptions) vm.setCompilerOptions({
         enabled: true,
-        warpTimer: false
+        warpTimer: true
       });
       if (vm.renderer.setMaxTextureDimension) vm.renderer.setMaxTextureDimension(2048);
 
@@ -248,7 +248,7 @@
       if (vm.runtime.setEnforcePrivacy) vm.runtime.setEnforcePrivacy(false);
 
       if (typeof ScaffoldingAddons !== 'undefined') {
-        ScaffoldingAddons.run(scaffolding, {"gamepad":false,"pointerlock":false,"specialCloudBehaviors":false,"unsafeCloudBehaviors":false,"pause":false});
+        ScaffoldingAddons.run(scaffolding, {"gamepad":false,"pointerlock":false,"specialCloudBehaviors":true,"unsafeCloudBehaviors":false,"pause":false});
       }
 
       scaffolding.setExtensionSecurityManager({
@@ -310,7 +310,7 @@
       await scaffolding.loadProject(projectData);
       setProgress(1);
       loadingScreen.hidden = true;
-      if (true) {
+      if (false) {
         scaffolding.start();
       } else {
         launchScreen.hidden = false;
