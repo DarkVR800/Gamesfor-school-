@@ -1,106 +1,121 @@
-<DOCTYPE html!>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762252322052844"
-     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="bootstrap.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlayZone Arcade - Home</title>
   <style>
-    .grid-container {
-      display: grid; /* Turns the div into a grid container */
-      grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-      grid-gap: 10px; /* Adds space between grid items */
-      /* Other properties like background-color, padding, etc., can be added for visualization */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d47a1, #6a1b9a, #ad1457);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
     }
 
-    .grid-item {
-      background-color: lightblue;
-      padding: 20px;
-      text-align: center;
-      /* Add any other styling for your grid items */
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      animation: fadeDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      animation: fadeIn 1.2s ease;
+    }
+
+    .hero h2 {
+      font-size: 3.5em;
+      margin: 0;
+      background: linear-gradient(90deg, #ff4081, #7c4dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    .btn-container {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease;
+    }
+
+    .btn {
+      background: #ec407a;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #d81b60;
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: #ccc;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Epic Files</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/g.html">Games</a>
-        </li>
-      </ul>
+  <header>
+    <h1>gfiles</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to gfiles!</h2>
+    <p>Best game website for chromebooks.</p>
+    <div class="btn-container">
+      <button class="btn" onclick="location.href='g.html'">Play Games</button>
+      <button class="btn" disabled>Proxys</button>
     </div>
-  </div>
-</nav>
-
-
-<h1 style="text-align: center; margin-bottom: 30px; margin-top: 30px;">Welcome to Epic Files</h1>
-
-<div style="margin-left: 30px;">
-<h2 style="margin-bottom: 30px;">Update Log</h2>
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Minor Update</div>
-  <div class="card-body">
-    <h4 class="card-title">Fixed Flash Games</h4>
-    <p class="card-text">10/24/25 - Fixed a bug where flash games would not load.</p>
-  </div>
-</div>
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Major Update</div>
-  <div class="card-body">
-    <h4 class="card-title">Added Game</h4>
-    <p class="card-text">10/13/25 - Added Terraria</p>
-  </div>
-</div>
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Major Update</div>
-  <div class="card-body">
-    <h4 class="card-title">Added Game</h4>
-    <p class="card-text">10/3/25 - Added Mario Kart 64</p>
-  </div>
-</div>
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Major Update</div>
-  <div class="card-body">
-    <h4 class="card-title">Added Game</h4>
-    <p class="card-text">10/1/25 - Added Hollow Knight</p>
-  </div>
-</div>
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Minor Update</div>
-  <div class="card-body">
-    <h4 class="card-title">Fixed Bugs</h4>
-    <p class="card-text">9/30/25 - Fixed Ultrakill bugs with game not loading and mouse locking issues</p>
-  </div>
-</div>
-
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Major Update</div>
-  <div class="card-body">
-    <h4 class="card-title">Added Games</h4>
-    <p class="card-text">9/26/2025 - Added 4 games: Toss the Turtle, Stick RPG, Happy Wheels, Dead Zone 2</p>
-  </div>
-</div>
-<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header">Major Update</div>
-  <div class="card-body">
-    <h4 class="card-title">Added Games</h4>
-    <p class="card-text">9/25/2025 - Added 11 games: Bloons TD 5, Plant vs Zombie, The Binding of Isaac, Raft, UltraKill, Buckshot Roulette, Pizza Tower, Kindergarten 1, Kindergarten 2, People Playground, Run3</p>
-  </div>
-</div>
-</div>
-
+  </section>
 </body>
+</html>
