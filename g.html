@@ -1,390 +1,232 @@
-<DOCTYPE html!>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4762252322052844"
-     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="bootstrap.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gfiles</title>
   <style>
-    .grid-container {
-      display: grid; /* Turns the div into a grid container */
-      grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-      grid-gap: 10px; /* Adds space between grid items */
-      /* Other properties like background-color, padding, etc., can be added for visualization */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a237e, #6a1b9a, #ad1457);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .grid-item {
-      background-color: lightblue;
-      padding: 20px;
+    h1 {
+      margin-top: 40px;
+      font-size: 3em;
       text-align: center;
-      /* Add any other styling for your grid items */
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px 0;
+      animation: fadeIn 1s ease;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: filter 0.3s ease;
+    }
+
+    .card:hover img {
+      filter: brightness(60%);
+    }
+
+    .card-content {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card h2 {
+      margin: 10px 0 5px;
+      font-size: 1.5em;
+    }
+
+    .card p {
+      color: #ddd;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .play-btn {
+      background: #ec407a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .play-btn:hover {
+      background: #d81b60;
+    }
+
+    footer {
+      margin: 40px 0 20px;
+      font-size: 0.9em;
+      color: #ccc;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Epic Files</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/g.html">Games <span class="visually-hidden">(current)</span></a>
-        </li>
-      </ul>
+  <h1>gfiles - Games</h1>
+
+  <div class="game-grid">
+    <div class="card">
+      <img src="images/snake.jpg" alt="Snake">
+      <div class="card-content">
+        <h2>Plants vs Zombies</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/flash/BTD5'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/tictactoe.jpg" alt="Tic Tac Toe">
+      <div class="card-content">
+        <h2>Terraria(not working)</h2>
+        <button class="play-btn" disabled>Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/2048.jpg" alt="2048">
+      <div class="card-content">
+        <h2>Buckshot Roullete</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/buckshot-roulette'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/flappybird.jpg" alt="Flappy Bird">
+      <div class="card-content">
+        <h2>Hollow Knight</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/hollow-knight'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Ultrakill</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/ultrakill'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>The Binding of Isaac</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/flash/BindingofIsaac'">Play Now</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Kindergarten 1</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/kindergarten/1'">Play Now</button>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Kindergarten 2</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/kindergarten/2'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>People Playground</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/people-playground'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Run 3</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/run3'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Happy Wheels</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/flash/happywheels'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Stick RPG</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/flash/stickrpg'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Dead Zed 2</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/flash/deadzone2'">Play Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/memory.jpg" alt="Memory Match">
+      <div class="card-content">
+        <h2>Raft</h2>
+        <button class="play-btn" onclick="location.herf='/gfiles/html5/raft'">Play Now</button>
+      </div>
     </div>
   </div>
-</nav>
-<div class="container my-4">
-  <div class="row g-4">
-    
-  <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Bloons TD 5</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">A cool tower defence game.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/flash/BTD5" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Plant vs Zombie</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Plants that fight Zombies.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/flash/pvz" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">The Binding of Isaac: Wrath of the Lamb</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Silly game.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/flash/BindingofIsaac" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Raft</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Survive on a Raft.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/raft" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">UltraKill</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Very Bloody.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/ultrakill" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Buckshot Roulette</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Roulette with a Shotgun.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/buckshot-roulette" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Pizza Tower</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Yummy Pizza.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/pizza-tower" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Kindergarten 1</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">The first Kindergarten game.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/kindergarten/1" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Kindergarten 2</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">The second Kindergarten game.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/kindergarten/2" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">People Playground</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Fun sandbox game.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/people-playground" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Run 3</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Run.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/run3" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Happy Wheels</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Very Happy.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/flash/happywheels" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Stick RPG</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Fun RPG game.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/flash/stickrpg" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Toss The Turtle</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Tossing a Turtle.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/flash/tosstheturtle" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Dead Zone 2</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Zombie.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/flash/deadzone2" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Hollow Knight</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Crazy Game.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/hollow-knight" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Mario Kart 64</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Mario Kart.</p>
-        </div>
-        <div class="card-body">
-          <a href="https://deltamath.me/gfiles/emulator/webretro/?core=autodetect&rom=https://deltamath.me/gfiles/emulator/games/roms/mk64.z64" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Terraria(clone)</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">Clone of terraria but still good. Use this if you can't run real terraria.</p>
-        </div>
-        <div class="card-body">
-          <a href="/gfiles/html5/terraria" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card mb-3">
-        <h3 class="card-header">Terraria(real)</h3>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none"
-             width="100%" height="200" aria-label="Placeholder: Image cap"
-             preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-          <rect width="100%" height="100%" fill="#868e96"></rect>
-          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Placeholder</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">The real version of terraria. Read instructions.</p>
-        </div>
-        <div class="card-body">
-          <a href="/terraria-guide.html" class="card-link">Play Now</a>
-        </div>
-      </div>
-    </div>
-
-
-    </div>
-  </div>
-  
-
 </body>
+</html>
