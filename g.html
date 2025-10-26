@@ -5,6 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gfiles</title>
   <style>
+
+    nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    animation: fadeDown 1s ease;
+    }
+
+
+    nav .logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    }
+
+
+    nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    }
+
+
+    nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+
+    nav ul li a:hover {
+    color: #ff80ab;
+    transform: scale(1.1);
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -113,6 +160,16 @@
   </style>
 </head>
 <body>
+
+  <nav>
+    <div class="logo">gfiles</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="g.html">Games</a></li>
+    <li><a diabled>Proxy</a></li>
+  </ul>
+</nav>
+
   <h1>gfiles - Games</h1>
 
   <div class="game-grid">
